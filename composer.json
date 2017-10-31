@@ -1,0 +1,28 @@
+{
+    "name": "fei/monolog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme Schaeffer",
+            "email": "jer.schaeffer@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Fei\\Logger\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.flash-global.net"
+        }
+    ],
+    "require": {
+        "fei/logger-client": "^1.0",
+        "monolog/monolog": "^1.23"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.3"
+    }
+}
