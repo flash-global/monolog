@@ -20,11 +20,11 @@ class LoggerApiHandler extends AbstractProcessingHandler
     protected $loggerClient;
 
     const LOG_LEVEL_MAPPING = [
-        Notification::LVL_DEBUG => Logger::DEBUG,
-        Notification::LVL_INFO => Logger::INFO,
-        Notification::LVL_WARNING => Logger::WARNING,
-        Notification::LVL_ERROR => Logger::ERROR,
-        Notification::LVL_PANIC => Logger::ALERT,
+        Logger::DEBUG => Notification::LVL_DEBUG,
+        Logger::INFO => Notification::LVL_INFO,
+        Logger::WARNING => Notification::LVL_WARNING,
+        Logger::ERROR => Notification::LVL_ERROR,
+        Logger::ALERT => Notification::LVL_PANIC,
     ];
 
     public function __construct(LoggerClient $loggerClient, $level = Logger::DEBUG, $bubble = true)
