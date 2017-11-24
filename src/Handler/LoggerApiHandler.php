@@ -58,11 +58,15 @@ class LoggerApiHandler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
+        if(isset($record['extra'])) {
+            $record['context'] = array_merge($record['context'], $record['extra']);
+        }
+
         $notification = new Notification();
         $notification->setMessage($record['message']);
         $notification->setLevel(self::LOG_LEVEL_MAPPING[$record['level']]);
-        $notification->setContext($record['context']);
         $notification->setNamespace($record['channel']);
+        $notification->setContext($record['context']);
 
         $this->getLoggerClient()->notify($notification);
     }
